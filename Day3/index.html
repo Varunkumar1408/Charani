@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post">
+
+  <input type="hidden" name="form_id" value="12345">
+
+  <fieldset>
+    <legend>Personal Details</legend>
+
+    <label>First Name:</label>
+    <input type="text" name="firstName" autofocus><br><br>
+
+    <label>Last Name:</label>
+    <input type="text" name="lastName"><br><br>
+
+    <label>Email (Readonly):</label>
+    <input type="email" name="email" value="test@gmail.com" readonly><br><br>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone" size="20"><br><br>
+
+    <label>Age (Disabled):</label>
+    <input type="number" value="22" disabled><br><br>
+
+    <label>Date of Birth:</label>
+    <input type="date" name="dob"><br><br>
+
+    <label>Time of Registration:</label>
+    <input type="time" name="time"><br><br>
+
+    <label>Date:</label>
+    <input type="date" name="date"><br><br>
+
+    <label>Select Month:</label>
+    <input type="month" name="month"><br><br>
+
+    <label>Select Week:</label>
+    <input type="week" name="week"><br><br>
+
+  </fieldset>
+
+
+  <br>
+  <fieldset>
+    <legend>Education Details</legend>
+
+    <label>Graduation Percentage:</label>
+    <input type="number" step="0.01" name="gradPercent"><br><br>
+
+    <label>Intermediate Percentage:</label>
+    <input type="number" step="0.01" name="interPercent"><br><br>
+
+    <label>10th Percentage:</label>
+    <input type="number" step="0.01" name="tenthPercent"><br><br>
+
+    <label>Passing Year:</label>
+    <input type="number" name="passingYear"><br><br>
+
+  </fieldset>
+
+
+  <br>
+  <fieldset>
+    <legend>Gender</legend>
+    <label><input type="radio" name="gender" value="male"> Male</label><br>
+    <label><input type="radio" name="gender" value="female"> Female</label><br>
+    <label><input type="radio" name="gender" value="other"> Other</label><br>
+  </fieldset>
+
+
+  <br>
+  <fieldset>
+    <legend>Skills</legend>
+    <label><input type="checkbox" name="java"> Java</label><br>
+    <label><input type="checkbox" name="python"> Python</label><br>
+    <label><input type="checkbox" name="html"> HTML</label><br>
+    <label><input type="checkbox" name="css"> CSS</label><br>
+  </fieldset>
+
+
+  <br>
+  <fieldset>
+    <legend>Additional Inputs</legend>
+
+    
+
+    <label>Experience Level (Range):</label><br>
+    <input type="range" min="0" max="10" name="experience"><br><br>
+
+    <label>Search Field:</label><br>
+    <input type="search" name="searchBox" placeholder="Search something..."><br><br>
+
+    <label>Your Portfolio URL:</label><br>
+    <input type="url" name="portfolio"><br><br>
+
+    <label>Upload Resume:</label><br>
+    <input type="file" name="resume"><br><br>
+
+  </fieldset>
+
+
+  <br>
+  <fieldset>
+    <legend>Declaration</legend>
+    <label>
+      <input type="checkbox" required>
+      I declare that all the information provided above is true.
+    </label>
+  </fieldset>
+
+  <br>
+
+  <button type="reset">Reset</button>
+
+  <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>
