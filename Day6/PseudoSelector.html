@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pseudo Selector Big Example</title>
+  <style>
+    /* ---------- PSEUDO-CLASSES ---------- */
+
+/* Button hover state */
+button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* Button click state */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Input focus */
+input:focus {
+  border: 2px solid blue;
+  outline: none;
+}
+
+/* First article only */
+article:first-child {
+  background-color: #f2f2f2;
+}
+
+/* ---------- PSEUDO-ELEMENTS ---------- */
+
+/* Fancy first letter of article text */
+article p::first-letter {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Add text before form title */
+.login-form h2::before {
+  content: "🔒 ";
+}
+
+/* Add divider after each article */
+article::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+  </style>
+</head>
+<body>
+
+  <form class="login-form">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button>Sign In</button>
+  </form>
+
+  <section class="articles">
+    <article>
+      <h3>First Article</h3>
+      <p>This article should look special compared to others.</p>
+    </article>
+
+    <article>
+      <h3>Second Article</h3>
+      <p>This article is normal.</p>
+    </article>
+  </section>
+
+</body>
+</html>
+

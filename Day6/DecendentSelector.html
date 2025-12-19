@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Descendant Selector</title>
+  <style>
+    
+.header a {
+  color: black;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+
+.post p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+
+.post h2 {
+  color: darkblue;
+}
+
+
+.sidebar a {
+  display: block;
+  color: green;
+  margin-bottom: 8px;
+}
+
+
+.footer p {
+  font-size: 14px;
+  color: gray;
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>My Blog</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Articles</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <article class="post">
+      <h2>Post Title</h2>
+      <p>This paragraph is inside an article.</p>
+      <p>This one too.</p>
+    </article>
+
+    <article class="post">
+      <h2>Another Post</h2>
+      <p>Article text here.</p>
+    </article>
+  </main>
+
+  <aside class="sidebar">
+    <h3>Quick Links</h3>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+  </aside>
+
+  <footer class="footer">
+    <p>© 2025 My Blog</p>
+  </footer>
+
+</body>
+</html>
+
