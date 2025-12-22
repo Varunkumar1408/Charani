@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Links</title>
+  <style>
+    /* BASE LINK */
+a {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+
+  color: #0066cc;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+/* UNVISITED */
+a:link {
+  color: #0066cc;
+}
+
+/* VISITED */
+a:visited {
+  color: #551a8b;
+}
+
+/* HOVER */
+a:hover {
+  color: #003366;
+  background-color: #e3f2fd;
+}
+
+/* KEYBOARD FOCUS */
+a:focus {
+  outline: 2px solid #ff9800;
+  outline-offset: 3px;
+}
+
+/* CLICK MOMENT */
+a:active {
+  color: #000;
+}
+
+/* --------
+   VARIANTS
+----------*/
+
+/* NO UNDERLINE LINK */
+a.no-underline {
+  text-decoration: none;
+}
+
+/* DISABLED LINK (VISUAL + INTERACTION BLOCK) */
+a.disabled {
+  pointer-events: none;
+  color: gray;
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+  </style>
+</head>
+<body>
+
+  <a href="#">Normal link</a><br><br>
+
+  <a href="#" class="no-underline">No underline link</a><br><br>
+
+  <a href="#" class="disabled">Disabled link</a>
+
+</body>
+</html>
+

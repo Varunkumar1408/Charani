@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 30px;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+  border: 3px solid black;
+  position: relative; /* REQUIRED */
+}
+
+.box span {
+  width: 30px;
+  height: 30px;
+  border: 3px solid black;
+  position: absolute;
+  border-top-left-radius: 50px;
+}
+
+/* corners */
+.tl span {
+  top: 0;
+  left: 0;
+}
+
+.tr span {
+  top: 0;
+  right: 0;
+}
+
+.bl span {
+  bottom: 0;
+  left: 0;
+}
+
+.br span {
+  bottom: 0;
+  right: 0;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="grid">
+  <div class="box tl"><span></span></div>
+  <div class="box tr"><span></span></div>
+  <div class="box bl"><span></span></div>
+  <div class="box br"><span></span></div>
+</div>
+
+
+</body>
+</html>
+
