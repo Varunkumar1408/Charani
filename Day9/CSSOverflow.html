@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     /* parent just aligns boxes */
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+/* fixed boundary — overflow CAN happen now */
+.box {
+  width: 160px;
+  height: 70px;
+  border: 2px solid black;
+  padding: 6px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* boundary ignored */
+.visible {
+  overflow: visible;
+}
+
+/* boundary enforced, no access */
+.hidden {
+  overflow: hidden;
+}
+
+/* boundary enforced, access allowed */
+.auto {
+  overflow: auto;
+}
+
+
+
+
+
+</style>
+<body>
+<div class="container">
+  <div class="box visible">
+    VISIBLE — This content is intentionally long enough to overflow the box height and width.
+  </div>
+
+  <div class="box hidden">
+    HIDDEN — This content is intentionally long enough to overflow the box height and width. Lorem ipsum dolor
+     sit amet consectetur adipisicing elit. A, atque culpa repellat itaque doloremque, accusantium omnis vitae
+      eos facere cupiditate, architecto harum. Ratione neque assumenda magni qui, ipsam eaque, nihil illo cum, nisi maiores fugit.
+  </div>
+
+  <div class="box auto">
+    AUTO — This content is intentionally long enough to overflow the box height and width.  Lorem ipsum dolor 
+    sit amet consectetur adipisicing elit. Debitis repudiandae, minus rem voluptate rerum, alias quae similique 
+    nemo illo perferendis expedita! Deserunt voluptas laudantium enim.
+  </div>
+</div>
+
+
+
+</body>
+</html>

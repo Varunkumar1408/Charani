@@ -4,74 +4,58 @@
   <meta charset="UTF-8">
   <title>CSS Links</title>
   <style>
-    /* BASE LINK */
-a {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-
+    /* 1️⃣ COLOR PROPERTY */
+.link-color {
   color: #0066cc;
+}
+
+/* 2️⃣ TEXT-DECORATION */
+.link-underline {
   text-decoration: underline;
-  text-underline-offset: 3px;
-
-  cursor: pointer;
-
-  transition: color 0.25s ease, background-color 0.25s ease;
+  text-underline-offset: 4px;
 }
 
-/* UNVISITED */
-a:link {
-  color: #0066cc;
+/* 3️⃣ HOVER STATE */
+.link-hover:hover {
+  color: white;
+  background-color: #0066cc;
+  padding: 4px 6px;
 }
 
-/* VISITED */
-a:visited {
-  color: #551a8b;
-}
-
-/* HOVER */
-a:hover {
-  color: #003366;
-  background-color: #e3f2fd;
-}
-
-/* KEYBOARD FOCUS */
-a:focus {
-  outline: 2px solid #ff9800;
+/* 4️⃣ FOCUS STATE (KEYBOARD) */
+.link-focus:focus {
+  outline: 2px solid orange;
   outline-offset: 3px;
 }
 
-/* CLICK MOMENT */
-a:active {
-  color: #000;
+/* 5️⃣ ACTIVE STATE (CLICK MOMENT) */
+.link-active:active {
+  color: red;
 }
 
-/* --------
-   VARIANTS
-----------*/
-
-/* NO UNDERLINE LINK */
-a.no-underline {
-  text-decoration: none;
-}
-
-/* DISABLED LINK (VISUAL + INTERACTION BLOCK) */
-a.disabled {
+/* 6️⃣ DISABLED-LIKE LINK */
+.link-disabled {
   pointer-events: none;
   color: gray;
-  text-decoration: none;
   cursor: not-allowed;
+  text-decoration: none;
 }
 
   </style>
 </head>
 <body>
 
-  <a href="#">Normal link</a><br><br>
+  <a href="#" class="link-color">Color change link</a><br><br>
 
-  <a href="#" class="no-underline">No underline link</a><br><br>
+  <a href="#" class="link-underline">Underline control link</a><br><br>
 
-  <a href="#" class="disabled">Disabled link</a>
+  <a href="#" class="link-hover">Hover effect link</a><br><br>
+
+  <a href="#" class="link-focus">Focus outline link</a><br><br>
+
+  <a href="#" class="link-active">Active state link</a><br><br>
+
+  <a href="#" class="link-disabled">Disabled link</a>
 
 </body>
 </html>
-

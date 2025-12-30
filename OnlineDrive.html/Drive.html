@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Charani Infotech | Online Drive</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", system-ui, sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #020617 70%);
+    color: white;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 42vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, #020617);
+}
+
+.hero img {
+    width: 110px;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hero h1 span {
+    color: #60a5fa;
+}
+
+.hero p {
+    margin-top: 8px;
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+/* ===== FORM SECTION ===== */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 16px 60px;
+}
+
+.card {
+    width: 460px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.08),
+        0 40px 100px rgba(0,0,0,0.8);
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px 14px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.7);
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    color: white;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 50px rgba(37,99,235,0.9);
+}
+
+.note {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 14px;
+    opacity: 0.75;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="./Charani.logo.webp" alt="Charani Infotech Logo">
+    <h1>Charani <span>Infotech</span> PVT LTD</h1>
+    <p>Online Recruitment Drive • Your career starts here</p>
+</section>
+
+<!-- FORM -->
+<div class="wrapper">
+    <div class="card">
+        <h2>Candidate Registration</h2>
+
+        <form id="candidateForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="text" id="phone" placeholder="Mobile Number" required>
+
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+
+            <select id="branch" required>
+                <option value="">Select Branch</option>
+                <option>CSE</option>
+                <option>IT</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+            </select>
+
+            <input type="text" id="college" placeholder="College / University Name" required>
+
+            <button type="submit">Start Test</button>
+        </form>
+
+        <div class="note">
+            ⏱ Time-bound assessment • One attempt only
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

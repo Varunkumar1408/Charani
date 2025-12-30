@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* page wrapper */
+.page {
+  padding-top: 60px;
+}
+
+/* 1. STICKY */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: black;
+  color: white;
+  padding: 15px;
+}
+
+/* container just for spacing */
+.container {
+  padding: 20px;
+}
+
+/* common box */
+.box {
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+
+/* 2. STATIC (default) */
+.static-box {
+  position: static;
+}
+
+/* 3. RELATIVE */
+.relative-box {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  background: lightblue;
+}
+
+/* parent reference for absolute */
+.parent {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  border: 2px solid blue;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+/* 4. ABSOLUTE */
+.absolute-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: tomato;
+  color: white;
+  padding: 8px;
+}
+
+/* normal element */
+.normal-box {
+  background: lightgray;
+}
+
+/* 5. FIXED */
+.fixed-box {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: green;
+  color: white;
+  padding: 10px;
+}
+
+</style>
+<body>
+    <div class="page">
+
+  <div class="sticky-header">
+    STICKY HEADER
+  </div>
+
+  <div class="container">
+
+    <div class="box static-box">
+      STATIC
+    </div>
+
+    <div class="box relative-box">
+      RELATIVE
+    </div>
+
+    <div class="parent">
+      PARENT (relative)
+
+      <div class="absolute-box">
+        ABSOLUTE
+      </div>
+    </div>
+
+    <div class="box normal-box">
+      NORMAL FLOW
+    </div>
+
+    <!-- filler to force scroll -->
+    <p>Scroll...</p><p>Scroll...</p><p>Scroll...</p>
+    <p>Scroll...</p><p>Scroll...</p><p>Scroll...</p>
+    <p>Scroll...</p><p>Scroll...</p><p>Scroll...</p>
+
+  </div>
+
+</div>
+
+<div class="fixed-box">
+  FIXED
+</div>
+
+</body>
+</html>

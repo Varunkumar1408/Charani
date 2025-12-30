@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Charani Infotech – Online Assessment</title>
+
+<style>
+body{
+    margin:0;
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:#eaf2fb;
+    color:#1f2937;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:#0d6efd;
+    color:white;
+    padding:16px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+}
+
+#timer{
+    background:white;
+    color:#0d6efd;
+    padding:6px 14px;
+    border-radius:6px;
+    font-weight:700;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:220px;
+    bottom:0;
+    background:white;
+    border-right:1px solid #e5e7eb;
+    padding:15px;
+    overflow-y:auto;
+}
+
+.sidebar h3{
+    margin-top:0;
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.palette{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:8px;
+}
+
+.q-btn{
+    padding:8px 0;
+    border-radius:6px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* states */
+.not-visited{background:#e5e7eb;}
+.answered{background:#22c55e;color:white;}
+.review{background:#f59e0b;color:white;}
+.visited{background:#ef4444;color:white;}
+
+/* ===== MAIN CONTENT ===== */
+.container{
+    max-width:1000px;
+    margin:110px auto 40px;
+    margin-left:260px;
+    padding:0 20px;
+}
+
+.section{
+    background:white;
+    padding:30px 35px;
+    margin-bottom:35px;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.section h2{
+    color:#0d6efd;
+    border-bottom:2px solid #e5e7eb;
+    padding-bottom:10px;
+}
+
+.question{
+    margin-bottom:30px;
+}
+
+.question p{
+    font-weight:600;
+}
+
+.options label{
+    display:block;
+    margin-left:20px;
+    margin-bottom:6px;
+}
+
+.actions{
+    margin-top:10px;
+}
+
+.actions button{
+    padding:6px 12px;
+    margin-right:10px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    background:#e5e7eb;
+}
+
+.submit-btn{
+    display:block;
+    margin:40px auto;
+    padding:14px 45px;
+    font-size:18px;
+    background:#198754;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>CHARANI INFOTECH – ONLINE ASSESSMENT</h2>
+    <div id="timer">60:00</div>
+</header>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+    <h3>Question Palette</h3>
+    <div class="palette" id="palette"></div>
+</div>
+
+<div class="container">
+
+<script>
+const totalQuestions = 60;
+const status = Array(totalQuestions).fill("not-visited");
+
+function updatePalette(){
+    const pal = document.getElementById("palette");
+    pal.innerHTML = "";
+    for(let i=1;i<=totalQuestions;i++){
+        pal.innerHTML += `
+        <button class="q-btn ${status[i-1]}" onclick="goTo(${i})">${i}</button>`;
+    }
+}
+
+function goTo(num){
+    document.getElementById("q"+num).scrollIntoView({behavior:"smooth"});
+    if(status[num-1]==="not-visited") status[num-1]="visited";
+    updatePalette();
+}
+
+function answered(num){
+    status[num-1]="answered";
+    updatePalette();
+}
+
+function markReview(num){
+    status[num-1]="review";
+    updatePalette();
+}
+</script>
+
+<script>
+function q(num, text, a,b,c,d){
+document.write(`
+<div class="question" id="q${num}">
+<p>${num}. ${text}</p>
+<div class="options">
+<label><input type="radio" name="q${num}" onclick="answered(${num})"> ${a}</label>
+<label><input type="radio" name="q${num}" onclick="answered(${num})"> ${b}</label>
+<label><input type="radio" name="q${num}" onclick="answered(${num})"> ${c}</label>
+<label><input type="radio" name="q${num}" onclick="answered(${num})"> ${d}</label>
+</div>
+<div class="actions">
+<button onclick="markReview(${num})">Mark for Review</button>
+</div>
+</div>
+`);
+}
+</script>
+
+<!-- ===== QUESTIONS (ALL 60) ===== -->
+<div class="section"><h2>Section 1 – Aptitude</h2>
+<script>
+q(1,"What is 15% of 240?","30","36","40","48");
+q(2,"Speed = Distance / Time. A car covers 120 km in 2 hours.","40","50","60","70");
+q(3,"If 3x = 27, x = ?","6","7","8","9");
+q(4,"Average of 10,20,30?","15","20","25","30");
+q(5,"20% gain on CP 500 = ?","550","580","600","620");
+q(6,"2³ × 2² = ?","16","32","64","128");
+q(7,"Ratio 3:5 equals","0.6","0.8","1.5","2");
+q(8,"SI on 1000 at 10% for 2 years","100","150","200","250");
+q(9,"√144","10","11","12","13");
+q(10,"LCM of 4 and 6","6","8","10","12");
+</script>
+</div>
+
+<div class="section"><h2>Section 2 – Logical Reasoning</h2>
+<script>
+for(let i=11;i<=40;i++){
+q(i,"Sample logical reasoning question "+i,"Option A","Option B","Option C","Option D");
+}
+</script>
+</div>
+
+<div class="section"><h2>Section 3 – English</h2>
+<script>
+for(let i=41;i<=60;i++){
+q(i,"Sample English question "+i,"Option A","Option B","Option C","Option D");
+}
+</script>
+</div>
+
+<button class="submit-btn" onclick="submitTest()">Submit Test</button>
+</div>
+
+<script>
+updatePalette();
+
+let time = 60*60;
+setInterval(()=>{
+    let m=Math.floor(time/60), s=time%60;
+    timer.textContent=`${m<10?'0'+m:m}:${s<10?'0'+s:s}`;
+    if(time<=0) submitTest();
+    time--;
+},1000);
+
+function submitTest(){
+    alert("Test submitted!");
+}
+</script>
+
+</body>
+</html>
