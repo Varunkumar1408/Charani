@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .article {
+  width: 500px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+/* the float */
+.pic {
+  
+  float: inline-end;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* normal block */
+.box {
+  background: lightgray;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+    <div class="article">
+  <img src="./newspaper.jpg" class="pic">
+
+  <p>
+    This is a paragraph of text placed next to an image. The image is floated
+    to the left, so the text naturally wraps around it instead of starting
+    below it. This behavior is exactly why float was invented — not for grids,
+    not for columns, but for wrapping content like in newspapers.
+  </p>
+
+  <p>
+    This is another paragraph to prove the point further. As long as the image
+    remains floated, all inline content will flow around it.
+  </p>
+
+  <div class="box">
+    This block element also respects the float and avoids overlapping.
+  </div>
+</div>
+
+</body>
+</html>

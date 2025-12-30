@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resume Parser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Resume Parser</h1>
+  <p>Upload your resume and extract details instantly</p>
+
+  <form id="resumeForm">
+    <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+    <button type="submit">Parse Resume</button>
+  </form>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+document.getElementById("resumeForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+
+  const res = await fetch("http://localhost:8080/upload", {
+    method: "POST",
+    body: formData
+  });
+
+  const data = await res.json();
+
+  let output = "";
+  for (let key in data) {
+    output += `<p><strong>${key}:</strong> ${data[key]}</p>`;
+  }
+  document.getElementById("result").innerHTML = output;
+});
+</script>
+
+</body>
+</html>

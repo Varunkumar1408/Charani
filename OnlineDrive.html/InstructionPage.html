@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Drive – Instructions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            /* PURE BLUE GRADIENT */
+            background: linear-gradient(135deg, #0f2a44, #1b4f9c, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 680px;
+            padding: 36px 40px;
+            border-radius: 14px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+        }
+
+        /* Brand */
+        .brand {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .brand img {
+            width: 85px;
+            margin-bottom: 10px;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1b4f9c;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 28px 0 18px;
+            color: #1f2933;
+            letter-spacing: 0.4px;
+        }
+
+        ul {
+            margin: 22px 0;
+            padding-left: 22px;
+            color: #374151;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 26px 0;
+            text-align: center;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            /* BLUE BUTTON */
+            background: linear-gradient(135deg, #1b4f9c, #2563eb);
+            color: #ffffff;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <!-- Brand -->
+        <div class="brand">
+            <img src="./Charani.logo.webp" alt="Charani Infotech Logo">
+            <div class="brand-name">Charani Infotech PVT LTD</div>
+        </div>
+
+        <h2>Online Drive Instructions</h2>
+
+        <ul>
+            <li>Ensure a stable internet connection before starting the test.</li>
+            <li>Login at least 15 minutes before the scheduled start time.</li>
+            <li>Do not refresh or close the browser during the assessment.</li>
+            <li>Only laptop or desktop devices are permitted.</li>
+            <li>Any form of malpractice will lead to immediate disqualification.</li>
+            <li>Submit the test before the timer expires.</li>
+        </ul>
+
+        <p class="note">
+            By clicking <strong>Start Test</strong>, you agree to follow all the above instructions.
+        </p>
+
+        <button class="btn">Start Test</button>
+
+    </div>
+
+</body>
+</html>
